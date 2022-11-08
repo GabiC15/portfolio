@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #121212;
+  --primary-color: #eaff6a;
+  --secondary-color: #bb85fc;
+  --tertiary-color: #03dac6;
+  --text-color: #ffffff;
+
+  color: var(--text-color);
+}
+
+html {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.presentation-section {
+  min-height: 100vh;
+  padding: 10rem 10rem 0 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.presentation-section .presentation-title-wrapper h3 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  position: relative;
+  bottom: -0.5rem;
+}
+
+.presentation-section .presentation-title-wrapper h1 {
+  font-size: 8rem;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: fadein 1s, shine 5s linear infinite;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes shine {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(-360deg);
+  }
+}
+
+.presentation-section .presentation-title-wrapper h2 {
+  width: 0;
+  font-size: 4rem;
+  font-weight: 400;
+  white-space: nowrap;
+
+  overflow: hidden;
+  border-right: 4px solid;
+  font-size: 4rem;
+
+  animation: typing 2s steps(27) 1s both, blink 0.5s step-end infinite alternate;
+}
+
+@keyframes typing {
+  to {
+    width: 20.7ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.presentation-title-wrapper h2 span {
+  /* background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  ); */
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  display: inline-block;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.presentation-section a {
+  display: flex;
+  align-self: center;
+  background-color: var(--tertiary-color);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+  margin-bottom: 2rem;
+
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0rem);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-1rem);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0rem);
+  }
+}
+
+.presentation-section a svg {
+  width: 2rem;
+  height: 2rem;
+  margin: auto;
+}

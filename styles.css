@@ -5,11 +5,14 @@
 }
 
 :root {
-  --bg-color: #121212;
+  --bg-color: #1f2023;
   --primary-color: #eaff6a;
   --secondary-color: #bb85fc;
   --tertiary-color: #03dac6;
+  --surface-color: #2d2d2d;
   --text-color: #ffffff;
+
+  --shine-animation: shine 4s linear infinite;
 
   color: var(--text-color);
 }
@@ -19,13 +22,33 @@ html {
   scroll-behavior: smooth;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-color);
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 body {
   background-color: var(--bg-color);
 }
 
+.container {
+  height: 100vh;
+  padding: 6rem 10rem 0 10rem;
+}
+
 .presentation-section {
-  min-height: 100vh;
-  padding: 10rem 10rem 0 10rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,7 +62,7 @@ body {
 }
 
 .presentation-section .presentation-title-wrapper h1 {
-  font-size: 8rem;
+  font-size: 7rem;
   background: linear-gradient(
     45deg,
     var(--primary-color),
@@ -49,7 +72,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
-  animation: fadein 1s, shine 5s linear infinite;
+  animation: fadein 1s, var(--shine-animation);
 }
 
 @keyframes fadein {
@@ -72,7 +95,7 @@ body {
 
 .presentation-section .presentation-title-wrapper h2 {
   width: 0;
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 400;
   white-space: nowrap;
 
@@ -108,35 +131,118 @@ body {
   padding-right: 0.5rem;
 }
 
-.presentation-section a {
+.down-button {
   display: flex;
   align-self: center;
-  background-color: var(--tertiary-color);
+  background-color: var(--text-color);
+  margin-top: auto;
   width: 3rem;
   height: 3rem;
   border-radius: 3rem;
   margin-bottom: 2rem;
+  text-decoration: none;
 
   animation: floating 3s ease-in-out infinite;
 }
 
 @keyframes floating {
   0% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0rem);
   }
   50% {
-    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
     transform: translatey(-1rem);
   }
   100% {
-    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0rem);
   }
 }
 
-.presentation-section a svg {
-  width: 2rem;
-  height: 2rem;
+.down-button i {
+  font-size: 2rem;
+  text-align: center;
+  color: var(--bg-color);
   margin: auto;
+}
+
+.skills-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-section h2 {
+  position: relative;
+  font-size: 4rem;
+}
+
+.skills-section h2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 0.5rem;
+  width: 10.5rem;
+  bottom: -7px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+
+  animation: var(--shine-animation);
+}
+
+.skills-section p {
+  padding-top: 2rem;
+}
+
+.skills-section .cards-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.skills-section .cards-row .card {
+  position: relative;
+  width: 20%;
+  background-color: var(--surface-color);
+  border-radius: 1rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.5rem 2rem;
+
+  animation: var(--shine-animation);
+}
+
+.skills-section .cards-row .card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  padding: 4px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.skills-section .card p {
+  padding: 0;
+  font-weight: 300;
+  text-align: center;
+}
+
+.skills-section .card h3 {
+  text-align: center;
+}
+
+.skills-section .card i {
+  font-size: 6rem;
+  color: var(--primary-color);
 }

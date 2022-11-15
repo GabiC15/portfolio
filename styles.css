@@ -214,6 +214,11 @@ body {
   padding: 1.5rem 2rem;
 
   animation: var(--shine-animation);
+  transition: all 500ms ease;
+}
+
+.skills-section .cards-row .card:hover {
+  transform: translateY(-1rem);
 }
 
 .skills-section .cards-row .card::before {
@@ -246,3 +251,32 @@ body {
   font-size: 6rem;
   color: var(--primary-color);
 }
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-section .projects-row {
+  display: flex;
+  /* width: 60%; */
+  justify-content: space-between;
+}
+
+.projects-section .projects-row img {
+  width: 20%;
+}
+
+.projects-row .info-project-column {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+
+  background-image: url("assets/projects-bg.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  /* background-size: 55%;
+  background-position-y: -3rem; */
+}
+
+/* .projects-row .info-project-column  */

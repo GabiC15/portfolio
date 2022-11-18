@@ -19,9 +19,14 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav></nav>
+    <nav class="navbar">
+      <img src="/assets/logo.png" alt="Logo" />
+      <a href="#presentation-section">Home</a>
+      <a href="#skills-section">Skills</a>
+      <a href="#projects-section">Proyectos</a>
+    </nav>
 
-    <section class="presentation-section container">
+    <section id="presentation-section" class="presentation-section container">
       <div class="presentation-title-wrapper">
         <h3>Mi nombre es</h3>
         <h1>Gabriel Casares</h1>
@@ -33,7 +38,7 @@
     </section>
 
     <section id="skills-section" class="skills-section container">
-      <h2>Skills tecnológicos</h2>
+      <h2>Skills</h2>
 
       <p>
         Cuento con conocimientos en una gran cantidad de tecnologías de
@@ -81,28 +86,35 @@
     </section>
 
     <section id="projects-section" class="projects-section container">
+      <h2>Proyectos</h2>
+
       <div class="projects-row">
-        <img src="/assets/screenshot-1.png" alt="Screenshot 1" />
-        <img src="/assets/screenshot-2.png" alt="Screenshot 2" />
+        <img src="/assets/screenshot.png" alt="Screenshot 1" />
 
         <div class="info-project-column">
-          <h3>Aplicacion de tareas</h3>
+          <h3>Aplicación de tareas</h3>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
             eleifend velit enim, eget suscipit nibh congue cursus. In in sodales
             odio, a finibus justo. Nunc semper sem non nibh porttitor, id
             finibus quam efficitur.
           </p>
+          <br />
           <p>
             Fusce odio mauris, porttitor in auctor vitae, feugiat vitae sem.
             Integer sed nibh non augue dignissim placerat a sed augue
           </p>
+          <br />
+          <p>
+            Phasellus non augue at elit posuere viverra. Etiam commodo viverra
+            sem, et accumsan justo. Aliquam sollicitudin aliquam diam, in
+            iaculis erat faucibus ut.
+          </p>
         </div>
       </div>
-
-      <a class="down-button" href="#skills-section">
-        <i class="fa-solid fa-chevron-down"></i>
-      </a>
     </section>
+    <footer>
+      <p>Gabriel Casares - Copyright© 2022</p>
+    </footer>
   </body>
 </html>

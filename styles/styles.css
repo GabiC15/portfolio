@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  color: var(--text-color);
+  font-family: "Inter", sans-serif;
 }
 
 :root {
@@ -18,7 +21,6 @@
 }
 
 html {
-  font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -43,14 +45,13 @@ body {
   background-color: var(--bg-color);
 }
 
-.container {
+/* .container {
   min-height: 100vh;
   padding: 6rem 10rem 0 10rem;
-}
+} */
 
 .navbar {
   height: 15vh;
-  padding: 2rem 10rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -78,28 +79,54 @@ body {
   flex-direction: column;
   justify-content: space-between;
 
-  min-height: 85vh !important;
+  min-height: 100vh !important;
+}
+
+@media (min-width: 768px) {
+  .presentation-section {
+    margin: 0rem 10rem;
+  }
+}
+
+.presentation-section .presentation-title-wrapper {
+  margin-top: 4rem;
 }
 
 .presentation-section .presentation-title-wrapper h3 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-weight: 400;
   position: relative;
   bottom: -0.5rem;
+  margin-bottom: 0.7rem;
+}
+
+@media (min-width: 768px) {
+  .presentation-section .presentation-title-wrapper h3 {
+    font-size: 2.5rem;
+  }
 }
 
 .presentation-section .presentation-title-wrapper h1 {
-  font-size: 7rem;
+  line-height: 1em;
+  font-size: 4rem;
+  font-weight: bold;
   background: linear-gradient(
     45deg,
     var(--primary-color),
     var(--secondary-color)
   );
+  margin-bottom: 1rem;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   animation: fadein 1s, var(--shine-animation);
+}
+
+@media (min-width: 768px) {
+  .presentation-section .presentation-title-wrapper h1 {
+    font-size: 7rem;
+  }
 }
 
 @keyframes fadein {
@@ -122,15 +149,21 @@ body {
 
 .presentation-section .presentation-title-wrapper h2 {
   width: 0;
-  font-size: 3.5rem;
+  font-size: 1.7rem;
   font-weight: 400;
   white-space: nowrap;
+  margin-bottom: 1rem;
 
   overflow: hidden;
   border-right: 4px solid;
-  font-size: 4rem;
 
   animation: typing 2s steps(27) 1s both, blink 0.5s step-end infinite alternate;
+}
+
+@media (min-width: 768px) {
+  .presentation-section .presentation-title-wrapper h2 {
+    font-size: 3.5rem;
+  }
 }
 
 @keyframes typing {
@@ -146,16 +179,21 @@ body {
 }
 
 .presentation-title-wrapper h2 span {
-  /* background: linear-gradient(
-    45deg,
-    var(--primary-color),
-    var(--secondary-color)
-  ); */
   background-color: var(--primary-color);
   color: var(--bg-color);
   display: inline-block;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.presentation-title-wrapper p {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .presentation-title-wrapper p {
+    width: 60%;
+  }
 }
 
 .down-button {
@@ -166,7 +204,7 @@ body {
   width: 3rem;
   height: 3rem;
   border-radius: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-decoration: none;
 
   animation: floating 3s ease-in-out infinite;
@@ -192,13 +230,16 @@ body {
 }
 
 .skills-section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 2rem;
 }
 
 .skills-section h2 {
   position: relative;
   font-size: 4rem;
+  font-weight: bold;
 }
 
 .skills-section h2::before {
@@ -221,15 +262,8 @@ body {
   padding-top: 2rem;
 }
 
-.skills-section .cards-row {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.skills-section .cards-row .card {
+.skills-section .card {
   position: relative;
-  width: 20%;
   background-color: var(--surface-color);
   border-radius: 1rem;
   margin-top: 4rem;
@@ -244,11 +278,11 @@ body {
   transition: all 500ms ease;
 }
 
-.skills-section .cards-row .card:hover {
+.skills-section .card:hover {
   transform: translateY(-1rem);
 }
 
-.skills-section .cards-row .card::before {
+.skills-section .card::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -280,15 +314,23 @@ body {
   color: var(--primary-color);
 }
 
+.skills-section .card svg {
+  width: 12rem;
+  height: 6rem;
+  fill: var(--primary-color);
+}
+
 .projects-section {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  padding-top: 2rem;
 }
 
 .projects-section h2 {
   position: relative;
-  top: -2rem;
   font-size: 4rem;
+  font-weight: bold;
 
   margin-bottom: 2rem;
 }
@@ -360,4 +402,5 @@ footer {
 
 footer p {
   font-size: 0.8rem;
+  margin: 0;
 }
